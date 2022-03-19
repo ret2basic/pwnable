@@ -29,7 +29,7 @@ There is no protection.
 
 ## Program Analysis
 
-[Program Analysis](./program_analysis.png)
+![Program Analysis](./program_analysis.png)
 
 The binary is minimalist (no function name). Starting from the `__start` label, we find two `syscall` instructions which look suspicious. The first `syscall` invokes `read(0, $rsp, 0x400)` and the second `syscall` invokes `sigreturn()`. This is an obvious hint for SROP.
 
